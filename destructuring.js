@@ -7,12 +7,9 @@ Rewrite the code below to use array destructuring instead of assigning each valu
 
   let item = ["Egg", 0.25, 12];
 
-  let name = item[0];
-  let price = item[1];
-  let quantity = item[2];
+  let [name, quantity, price] = item
 
   console.log(`Item: ${name}, Quantity: ${quantity}, Price: ${price}`);
-  console.log();
 }
 
 /**
@@ -24,10 +21,11 @@ Rewrite the code below to assign each number to the right variable.
 
   let numbers = [3, 5, 4, 2, 6, 1];
 
-  let [one, two, three, four, five, six] = numbers;
+  let sortedNumbers = numbers.sort((a, b) => a - b)
+
+  let [one, two, three, four, five, six] = sortedNumbers;
 
   console.log(`One: ${one}, Two: ${two}, Three: ${three}, Four: ${four}, Five: ${five}, Six: ${six}`);
-  console.log();
 }
 
 /**
@@ -41,10 +39,10 @@ Write the destructuring assignment that reads:
 {
   console.log("EXERCISE 3");
 
-  let user = { name: "John", years: 30 };
+  let user = { name: "John", years: 30};
 
   // your code to the left side:
-  let {} = user;
+  let {name, age, isAdmin = false} = user;
 
   console.log(name); // John
   console.log(age); // 30
@@ -61,12 +59,9 @@ Rewrite the code below to use array destructuring instead of assigning each valu
 
   let person = [12, "Chris", "Owen"];
 
-  let firstName = person[1];
-  let lastName = person[2];
-  let age = person[0];
+  let [age ,firstName, lastName] = person
 
   console.log(`Person - Age: ${age}, Name: ${firstName} ${lastName}`);
-  console.log();
 }
 
 /** 
@@ -80,11 +75,9 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
 
   let person = ["Chris", 12, "Owen"];
 
-  let firstName = person[0];
-  let lastName = person[2];
+  let [firstName, ,lastName] = person
 
   console.log(`Name: ${firstName} ${lastName}`);
-  console.log();
 }
 
 /** 
@@ -98,7 +91,7 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
   const students = ['Christina', 'Jon', 'Alexandare'];
 
   // Write your code here
-  const [] = students;
+  const [, , lastName] = students;
 
   console.log(lastName);
   console.log();
@@ -119,7 +112,7 @@ Hint: https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
   ];
 
   // Write your code here
-  const [] = moreStudents;
+  const [student1, [student2, student3],[student4,student5]] = moreStudents;
 
   console.log(student1, student2, student3, student4, student5);
   console.log();
@@ -148,12 +141,10 @@ Hint: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operator
       },
     }
     // const {} = info // <-- replace the next few `const` lines with this
-    const title = info.title
-    const protagonistName = info.protagonist.name
-    const enemy = info.protagonist.enemies[3]
-    const enemyTitle = enemy.title
-    const enemyName = enemy.name
+    const {title, protagonist: {name: protagonistName, enemies: [{name: enemyName, title: enemyTitle}] } } = info
     return `${enemyName} (${enemyTitle}) is an enemy to ${protagonistName} in "${title}"`
   }
   
+  console.log(nestedArrayAndObject());
+
 }
