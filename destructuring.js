@@ -42,7 +42,7 @@ Write the destructuring assignment that reads:
   let user = { name: "John", years: 30};
 
   // your code to the left side:
-  let {name, age, isAdmin = false} = user;
+  let {name, years: age, isAdmin = false} = user;
 
   console.log(name); // John
   console.log(age); // 30
