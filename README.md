@@ -9,6 +9,6 @@ Look at the file `destructuring.js`. You have to complete a serie of 8 exercices
 Before to run into it, I advise you to you to read this doc : 
 
 - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment
-- https://untangled.io/in-depth-es6-destructuring-with-assembled-avengers
+- https://javascript.info/destructuring-assignment
 
 Good Luck !
